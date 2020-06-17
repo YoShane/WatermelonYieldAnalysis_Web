@@ -182,12 +182,35 @@ $(function () {
 /*  ==========================================
   SHOW UPLOADED IMAGE NAME
 * ========================================== */
-var input = document.getElementById( 'upload' );
-var infoArea = document.getElementById( 'upload-label' );
+if(document.body.contains(document.getElementById( 'upload' ))){
+  var input = document.getElementById( 'upload' );
+  var infoArea = document.getElementById( 'upload-label' );
 
-input.addEventListener( 'change', showFileName );
+  input.addEventListener( 'change', showFileName );
+}
+
 function showFileName( event ) {
 var input = event.srcElement;
 var fileName = input.files[0].name;
 infoArea.textContent = 'File name: ' + fileName;
 }
+
+$("#list .mr-2.rounded.img-fluid").click(function() {
+  $('#output_img').attr('src','http://163.18.42.219:5000/pic/'+$(this).parent().find("#picList").text());
+   
+  $('#model').modal('show');
+   
+  $('#count').text($(this).parent().find(".d-block.text-gray-dark").text());
+  
+  $('#price').text('Market value：'+ $(this).parent().find("#priceList").text());
+  $('#processTime').text($(this).parent().find("#recTimeList").text()+ ' sec.');
+  
+  $('#totalProcessTime').text($(this).parent().find("#totalTimeList").text()+ ' sec.');
+  });
+
+
+  $(document).ready(function() {
+      $('#example').DataTable( {
+        "order": [[ 5, "desc" ]]
+    } );
+  } );

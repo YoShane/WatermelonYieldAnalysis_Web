@@ -1393,7 +1393,15 @@ body.mobile-nav-active #mobile-nav-toggle i {
   color: #71c55d;
 }
 
+.card{
+  margin-top:15%;
+  margin-bottom:30%;
+}
 
+.recordCard{
+  margin-top:10%;
+  margin-bottom:10%;
+}
 /*
 *
 * ==========================================
@@ -1442,3 +1450,4 @@ body.mobile-nav-active #mobile-nav-toggle i {
 #output_img{
   width: 100%;
 }
+

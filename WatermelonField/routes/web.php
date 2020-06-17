@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/','HomeController@index')->name('index');
 
+Route::get('/record','RecordController@index')->name('record');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
